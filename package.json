@@ -33,7 +33,9 @@
     "@dark-yasiya/yt-dl.js": "latest",
     "google-tts-api": "^2.0.2",
     "ruhend-scraper": "^9.0.1",
-    "cheerio": "^1.1.0"
+    "cheerio": "^1.1.0",
+    "g-i-s":"latest",
+    "node-cache":"latest"
     
   }
 }
