@@ -35,6 +35,7 @@ async (conn, mek, m, { from, quoted, pushname, reply }) => {
 7 │ *DOWNLOAD MENU*
 8 │ *FUN MENU*
 9 │ *CONVERT MENU*
+10│ *MOVIE MENU*
 
 > ©𝗣𝗢𝗪𝗘𝗥𝗗 𝗕𝗬 𝗗𝗜𝗟𝗦𝗛𝗔𝗡 𝗠𝗗`;
 
