@@ -35,7 +35,8 @@
     "ruhend-scraper": "^9.0.1",
     "cheerio": "^1.1.0",
     "g-i-s":"latest",
-    "node-cache":"latest"
+    "node-cache":"latest",
+    "@xaviabot/fb-downloader": "1.0.14"
     
   }
 }
