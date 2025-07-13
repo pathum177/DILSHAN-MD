@@ -22,7 +22,7 @@ await conn.sendMessage(from, { react: { text: "💡", key: mek.key } });
 
 const result = await getFBInfo(q);
 
-    const captionHeader = `🎥 *LUXALGO FB DOWNLOADER 🎥*
+    const captionHeader = `🎥 *DILSHAN MD FB DOWNLOADER 🎥*
 
 *┏━━━━━━━━━━━━━━━━┓*
 *┃ 🎥 ᴛɪᴛʟᴇ:* ${result.title}
@@ -41,7 +41,7 @@ const result = await getFBInfo(q);
 *2.2 | 📂 DOCUMENT*
 *2.3 | 🎤 VOICE NOTE [ptt]*
 
-> *𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙻𝚄𝚇𝙰𝙻𝙶𝙾 𝚇𝙳*
+> *𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙳𝙸𝙻𝚂𝙷𝙰𝙽 𝙼𝙳*
 `;
 
 const sentMsg = await conn.sendMessage(from, {
