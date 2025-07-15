@@ -23,7 +23,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
  │ *👤 User* :  *${pushname}*
  │ *📂 Ram usage*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB 
  │ *⚙️ HostName*: ${os.hostname()}
- │ *👨‍💻 Owner*: Pathum Malsara
+ │ *👨‍💻 Owner*: Dilshan Ashinsa 
  ╰───────────●●►
 
 * *🔢 Reply Below This Number*
@@ -45,7 +45,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > © *ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝙳𝙸𝙻𝚂𝙷𝙰𝙽 𝙼𝙳 𝚅1*`;
 
-        const vv = await conn.sendMessage(from, { image: { url: "https://i.ibb.co/5XJdT7zS/6691.jpg"}, caption: desc }, { quoted: mek });
+        const vv = await conn.sendMessage(from, { image: { url: "https://i.ibb.co/R4g4j9hJ/SulaMd.jpg"}, caption: desc }, { quoted: mek });
 
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
