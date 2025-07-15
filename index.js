@@ -1,11 +1,11 @@
 const {
-default: makeWASocket,
-useMultiFileAuthState,
-DisconnectReason,
-jidNormalizedUser,
-getContentType,
-fetchLatestBaileysVersion,
-Browsers
+  default: makeWASocket,
+  useMultiFileAuthState,
+  DisconnectReason,
+  jidNormalizedUser,
+  getContentType,
+  fetchLatestBaileysVersion,
+  Browsers
 } = require("@whiskeysockets/baileys")
 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
@@ -38,7 +38,6 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 
-
 /////////////////MONGODB.///////////////
 const connectDB = require(`./lib/mongodb`)
 connectDB();
@@ -47,7 +46,6 @@ connectDB();
 const{readEnv} = require(`./lib/database`)
 const config = await readEnv();
 const prefix = config.PREFIX
-
 ////////////////////////////////////////////////////////
         
 console.log("Connecting 🧬...");
@@ -123,7 +121,29 @@ const type = getContentType(mek.message)
 const content = JSON.stringify(mek.message)
 const from = mek.key.remoteJid
 const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
-const body = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : ''
+
+// Updated Body Parser
+const getBody = () => {
+  try {
+    if (type === 'conversation') return mek.message.conversation;
+    if (type === 'extendedTextMessage') return mek.message.extendedTextMessage.text;
+    if (type === 'imageMessage' && mek.message.imageMessage.caption) return mek.message.imageMessage.caption;
+    if (type === 'videoMessage' && mek.message.videoMessage.caption) return mek.message.videoMessage.caption;
+    if (type === 'templateButtonReplyMessage') return mek.message.templateButtonReplyMessage.selectedId;
+    if (type === 'buttonsResponseMessage') return mek.message.buttonsResponseMessage.selectedButtonId;
+    if (type === 'listResponseMessage') return mek.message.listResponseMessage.singleSelectReply.selectedRowId;
+    if (type === 'interactiveResponseMessage' && mek.message.interactiveResponseMessage.nativeFlowResponseMessage) {
+      const raw = mek.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson;
+      return raw ? JSON.parse(raw).id : '';
+    }
+    return '';
+  } catch (e) {
+    return '';
+  }
+};
+
+const body = getBody();
+
 const isCmd = body.startsWith(prefix)
 const command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLowerCase() : ''
 const args = body.trim().split(/ +/).slice(1)
@@ -224,4 +244,4 @@ res.send("DILSHAN MD Bot running..✅💫");
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
 connectToWA()
-}, 4000);  
+}, 4000);
