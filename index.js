@@ -15,6 +15,8 @@ const config = require('./config')
 const qrcode = require('qrcode-terminal')
 const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
+var { updateCMDStore,isbtnID,getCMDStore,getCmdForCmdId,connectdb,input,get,updb,updfb } = require("./lib/database")
+var { get_set , input_set } = require('./lib/set_db')
 const axios = require('axios')
 const { File } = require('megajs')
 
