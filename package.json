@@ -16,6 +16,7 @@
     "util": "^0.12.4",
     "express": "latest",
     "axios": "^1.2.5",
+    "unzipper": "latest",
     "denethdev-ytmp3":"1.0.2",
     "file_size_url": "^1.0.4",
     "fs-extra": "^11.1.0",
