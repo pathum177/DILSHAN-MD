@@ -9,7 +9,7 @@
     "restart": "pm2 restart dilshan-md"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "npm:baileys-pro@latest",
+    "@whiskeysockets/baileys": "github:Rikzzmodz/Bails",
     "@adiwajshing/keyed-db": "^0.2.4",
     "pino": "^7.0.5",
     "pm2": "^5.2.0",
